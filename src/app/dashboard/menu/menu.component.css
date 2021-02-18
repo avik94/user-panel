@@ -1,0 +1,7 @@
+mat-list-item{
+  cursor: pointer;
+  border-bottom: 1px solid grey;
+}
+mat-list-item p{
+  color: white;
+}

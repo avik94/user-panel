@@ -1,0 +1,12 @@
+<form [formGroup]="userLogin" class="userForm">
+  <mat-form-field appearance="outline">
+    <mat-label>Email Address</mat-label>
+    <input matInput placeholder="Email" formControlName="email" required>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Phone Number</mat-label>
+    <input type="number" matInput placeholder="Phone No" formControlName="phone" required>
+  </mat-form-field>
+  <button mat-raised-button [disabled] = "!userLogin.valid" (click)="submit()">Submit</button>
+</form>
+<p *ngIf="msgRegister">You are not a registered user. </p>

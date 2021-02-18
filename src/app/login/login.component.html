@@ -1,0 +1,34 @@
+<section>
+  <div class="header">
+    <div class="header-left">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" color="accent">facebook</mat-icon>
+      <mat-icon aria-hidden="false" aria-label="Example home icon" color="accent">mail_outline</mat-icon>
+    </div>
+  </div>
+  <div class="content-body">
+    <div class="left-section">
+      <div class="image-content">
+        <div class="img-section">
+          <img src="../../assets/info_graphic_1.svg" alt="">
+        </div>
+        <h3>Welcome to our portal</h3>
+        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+      </div>
+    </div>
+    <div class="right-section">
+      <div *ngIf="login">
+        <p>Please <span (click)="registerClick()">Register</span> first if you are new.</p>
+        <app-user-login></app-user-login>
+      </div>
+      <div *ngIf="register">
+        <p>Already Registered! Please <span (click)="loginClick()">Login</span>
+        .
+        </p>
+        <app-wizard></app-wizard>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p >Copyright © 2021. All Right Reserved.</p>
+  </div>
+</section>

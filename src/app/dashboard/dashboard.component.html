@@ -1,0 +1,28 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+    <mat-sidenav-container
+    class="example-sidenav-container"
+    [hasBackdrop] = "mobileQuery.matches ? 'true' : 'false'"
+    autosize>
+        <mat-sidenav  #sidebar [opened] = "mobileQuery.matches ? 'false' : 'true'" [mode]="mobileQuery.matches ? 'over' : 'side'"
+        [fixedInViewport]="mobileQuery.matches">
+            <div class="sidebar-header">
+              <h2>Admin</h2>
+            </div>
+            <menu-item ></menu-item>
+        </mat-sidenav>
+        <div class="top-bar">
+            <mat-icon aria-hidden="false"
+            aria-label="Example home icon"
+            (click)="sidebar.toggle()"
+            style="color: #fff; cursor: pointer;">menu</mat-icon>
+            <div class="logout-button">
+              <button mat-raised-button color="warn" (click)="logOut()">Log out</button>
+            </div>
+        </div>
+        <div class="main-content">
+          <app-card-details [details] = "personDetails"></app-card-details>
+        </div>
+    </mat-sidenav-container>
+
+</div>
+

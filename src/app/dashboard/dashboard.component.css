@@ -1,0 +1,49 @@
+mat-sidenav{
+  width: 230px;
+  min-width: 230px;
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-sidenav-container {
+  flex: 1;
+  background: #a8a8ad3d;
+}
+
+.example-is-mobile .example-sidenav-container {
+  flex: 1 0 auto;
+}
+.top-bar{
+  padding: 10px;
+  background: #5069a0;
+  display: flex;
+}
+.top-bar .logout-button{
+  margin-left: auto;
+}
+
+.main-content{
+  padding: 5px 5px 5px 10px;
+
+}
+.sidebar-header{
+  height: 100px;
+  background: grey;
+  position: relative
+}
+.sidebar-header h2{
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  color: white;
+}
+mat-sidenav {
+  background: #1b243a;
+}

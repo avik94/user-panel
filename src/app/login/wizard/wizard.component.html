@@ -1,0 +1,58 @@
+<mat-horizontal-stepper labelPosition="bottom" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Fill personel details</ng-template>
+      <mat-form-field appearance="outline">
+        <mat-label>Full Name</mat-label>
+        <input matInput placeholder="Full Name" formControlName="name" required>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Phone Number</mat-label>
+        <input matInput placeholder="Phone No" formControlName="phone" required type="number">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <input matInput placeholder="Address" formControlName="address" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext color="primary">
+          <mat-icon>arrow_forward</mat-icon>
+        </button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="secondFormGroup" required>
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Fill out organization details</ng-template>
+      <mat-form-field appearance="outline">
+        <mat-label>Oranization Name</mat-label>
+        <input matInput formControlName="organizationName" placeholder="Organization Name" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email Address</mat-label>
+        <input matInput formControlName="email" placeholder="Email"
+               required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Select Role</mat-label>
+        <mat-select matNativeControl id="mySelectId" formControlName="type">
+          <mat-option value="Business">Business</mat-option>
+          <mat-option value="Employer">Employer</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious color="primary">
+          <mat-icon>arrow_backward</mat-icon>
+        </button>
+        <button mat-raised-button matStepperNext [disabled] = "!firstFormGroup.valid || !secondFormGroup.valid" (click)="submit()">Submit</button>
+      </div>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>
+<div *ngIf="progressBar">
+  <p>You are redirecting to login...</p>
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
